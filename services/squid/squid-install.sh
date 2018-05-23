@@ -37,7 +37,7 @@ enter
 
 
 if [[ "$OS" = "debian" ]]; then
-	apt-get -y install squid3 sed curl
+	apt-get -y install squid sed curl
 	
 	MYIP=`curl -s ifconfig.me`;
 	MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -47,6 +47,7 @@ if [[ "$OS" = "debian" ]]; then
 	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid3/squid.conf
 	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid/squid.conf
 	sed -i $MYIP2 /etc/squid3/squid.conf;
+	sed -i $MYIP2 /etc/squid/squid.conf;
 	service squid3 restart
 	service squid restart
 
