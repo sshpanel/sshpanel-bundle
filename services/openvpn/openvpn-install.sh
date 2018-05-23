@@ -433,6 +433,6 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo
 	success "Finished!"
 	echo
-	info "Your client configuration is available at: `~/`$CLIENT.ovpn"
+	info "Your client configuration is available at: ~/$CLIENT.ovpn"
 	info "If you want to add more clients, you simply need to run this script again!"
 fi
