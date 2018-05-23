@@ -15,7 +15,6 @@ display_sshpanel_screen
 
 while :
 	do
-	clear
 		echo
 		info "What do you want to do?"
 		echo "   1) Install OpenVPN"
