@@ -43,7 +43,7 @@ if [[ "$OS" = "centos" ]]; then
 	yum install screen sed -y
 fi
 
-cp ./badvpn-udpgw /usr/bin/
+cp badvpn-udpgw /usr/bin/badvpn-udpgw
 
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
