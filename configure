@@ -1,0 +1,41 @@
+#!/bin/bash
+# SSHPANEL HELPERS CONFIGURATION SCRIPTS
+# Author: Rizal Fakhri <rizal@codehub.id>
+
+. $HOME/sshpanel-bundle/support/app-check.sh
+. $HOME/sshpanel-bundle/support/os-detector.sh
+. $HOME/sshpanel-bundle/support/string-helper.sh
+. $HOME/sshpanel-bundle/support/welcome-screen.sh
+
+__LSB__=`$(lsb_release -i -s) | awk '{print tolower($0)}'`
+__DIST__=$(echo ${__LSB__})
+
+clear
+display_sshpanel_screen
+
+while :
+	do
+	clear
+		echo
+		info "What do you want to do?"
+		echo "   1) Install OpenVPN"
+		echo "   2) Install Dropbear"
+		echo "   3) Install Squid"
+		echo "   4) Exit"
+		read -p "Select an option [1-4]: " option
+		case $option in
+			1) 
+			bash services/openvpn/openvpn-install.sh
+			exit
+			;;
+			2)
+			exit
+			;;
+			3) 
+			exit
+			;;
+			4) exit;;
+		esac
+	done;
+
+bash misc/copyright.sh

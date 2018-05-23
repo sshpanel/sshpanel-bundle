@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ "$(which squid3)" != "" ]]; then
+	if [[ "$(netstat -ltnup | grep squid)" ]]; then
+		echo "1"
+	else
+		echo "2"
+	fi
+else
+	echo "3"
+fi

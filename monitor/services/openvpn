@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ "$(which openvpn)" != "" ]]; then
+	if [[ "$(netstat -ltnup | grep openvpn)" != "" ]]; then
+		echo "1"
+	else
+		echo "2"
+	fi
+else
+	echo "3"
+fi

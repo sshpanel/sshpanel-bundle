@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ "$(which dropbear)" != "" ]]; then
+	if [[ "$(netstat -natp | grep dropbear)" != "" ]]; then
+		echo "1"
+	else
+		echo "2"
+	fi
+else
+	echo "2"
+fi

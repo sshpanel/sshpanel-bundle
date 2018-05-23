@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ "$(which xl2tpd)" != "" ]]; then
+	
+	status=$?
+	service xl2tpd status | grep -q "active (running)"
+	if [ ${status} -eq 0 ]; then
+	    echo '1'
+	else
+		echo '2'
+	fi
+
+else
+	echo "3"
+fi
