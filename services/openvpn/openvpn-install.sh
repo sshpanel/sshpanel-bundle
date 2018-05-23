@@ -51,9 +51,9 @@ newclient () {
 	echo "<cert>" >> ~/$1.ovpn
 	cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
 	echo "</cert>" >> ~/$1.ovpn
-	echo "<key>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
-	echo "</key>" >> ~/$1.ovpn
+	# echo "<key>" >> ~/$1.ovpn
+	# cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
+	# echo "</key>" >> ~/$1.ovpn
 	echo "<tls-auth>" >> ~/$1.ovpn
 	cat /etc/openvpn/ta.key >> ~/$1.ovpn
 	echo "</tls-auth>" >> ~/$1.ovpn
@@ -408,7 +408,7 @@ group nogroup
 
 # PAM Plugin
 client-cert-not-required
-plugin /usr/lib/openvpn/openvpn-auth-pam.so login
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
 
 persist-key
 persist-tun
