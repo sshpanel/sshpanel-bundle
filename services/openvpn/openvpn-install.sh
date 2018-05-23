@@ -82,7 +82,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo
-			success "Client $CLIENT added, configuration is available at:" ~/"$CLIENT.ovpn"
+			success "Client $CLIENT added, configuration is available at:" "`~/`$CLIENT.ovpn"
 			exit
 			;;
 			2)
