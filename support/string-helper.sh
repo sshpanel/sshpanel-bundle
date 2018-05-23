@@ -36,3 +36,11 @@ text_danger()
 {
     echo -e "\e[91m $1 \e[0m"
 }
+
+space() 
+{
+	echo 
+	echo 
+	echo 
+	echo 
+}
