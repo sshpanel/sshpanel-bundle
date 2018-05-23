@@ -31,7 +31,7 @@ else
 	exit
 fi
 
-
+clear
 info "This script will install dropbear into your system!"
 enter
 
