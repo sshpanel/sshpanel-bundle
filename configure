@@ -25,15 +25,25 @@ while :
 		case $option in
 			1) 
 			bash services/openvpn/openvpn-install.sh
+			bash misc/copyright.sh
+
 			exit
+
 			;;
 			2)
+			bash misc/copyright.sh
+
 			exit
 			;;
 			3) 
+			bash misc/copyright.sh
+
 			exit
 			;;
-			4) exit;;
+			4) 
+			danger "Aborting!"
+			exit
+			;;
 		esac
 	done;
 
