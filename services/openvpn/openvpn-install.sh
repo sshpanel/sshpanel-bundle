@@ -401,6 +401,15 @@ rcvbuf 0
 remote $IP $PORT
 resolv-retry infinite
 nobind
+
+# Drop Users
+user nobody
+group nogroup
+
+# PAM Plugin
+client-cert-not-required
+plugin /usr/lib/openvpn/openvpn-auth-pam.so login
+
 persist-key
 persist-tun
 remote-cert-tls server
