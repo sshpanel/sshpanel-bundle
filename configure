@@ -46,6 +46,13 @@ while :
 			bash misc/copyright.sh
 
 			;;
+			4)
+			bash services/badvpn-udpgw/badvpn-install.sh
+			
+			bash misc/copyright.sh
+			space
+			enter
+			;;
 			6) 
 			danger "Aborting!"
 			exit
