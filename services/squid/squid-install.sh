@@ -42,13 +42,8 @@ if [[ "$OS" = "debian" ]]; then
 	MYIP=`curl -s ifconfig.me`;
 	MYIP2="s/xxxxxxxxx/$MYIP/g";
 
-	mkdir /etc/squid3
-	mkdir /etc/squid
-	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid3/squid.conf
 	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid/squid.conf
-	sed -i $MYIP2 /etc/squid3/squid.conf;
 	sed -i $MYIP2 /etc/squid/squid.conf;
-	service squid3 restart
 	service squid restart
 
 fi
