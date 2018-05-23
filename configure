@@ -26,6 +26,7 @@ while :
 			1) 
 			bash services/openvpn/openvpn-install.sh
 			bash misc/copyright.sh
+			space
 			enter
 
 			clear
