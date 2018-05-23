@@ -11,10 +11,10 @@ __LSB__=`$(lsb_release -i -s) | awk '{print tolower($0)}'`
 __DIST__=$(echo ${__LSB__})
 
 clear
-display_sshpanel_screen
-
 while :
 	do
+		display_sshpanel_screen
+		
 		echo
 		info "What do you want to do?"
 		echo "   1) Install OpenVPN"
