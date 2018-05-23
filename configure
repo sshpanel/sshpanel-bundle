@@ -43,7 +43,11 @@ while :
 
 			;;
 			3) 
+			bash services/squid/squid-install.sh
+
 			bash misc/copyright.sh
+			space
+			enter
 
 			;;
 			4)
