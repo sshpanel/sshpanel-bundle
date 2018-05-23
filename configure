@@ -21,8 +21,8 @@ while :
 		echo "   1) Install OpenVPN"
 		echo "   2) Install Dropbear"
 		echo "   3) Install Squid"
-		echo "	 4) Install BadVPN-UDPGw"
-		echo "	 5) Install Webmin"
+		echo "   4) Install BadVPN-UDPGw"
+		echo "   5) Install Webmin"
 		echo "   6) Exit"
 		read -p "Select an option [1-6]: " option
 		case $option in
@@ -40,7 +40,7 @@ while :
 			bash misc/copyright.sh
 			space
 			enter 
-			
+
 			;;
 			3) 
 			bash misc/copyright.sh

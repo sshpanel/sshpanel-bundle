@@ -42,7 +42,7 @@ if [[ "$OS" = "debian" ]]; then
 	apt-get -y install dropbear
 	sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 	sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
-	sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443 -p 143"/g' /etc/default/dropbear
+	sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443 -p 143 -p 109 -p 110"/g' /etc/default/dropbear
 	echo "/bin/false" >> /etc/shells
 	echo "/usr/sbin/nologin" >> /etc/shells
 	service ssh restart
@@ -52,11 +52,11 @@ fi
 if [[ "$OS" = "centos" ]]; then
 	yum install sed -y
 	yum -y install dropbear
-	echo "OPTIONS=\"-p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
+	echo "OPTIONS=\"-p 109 -p 110 -p 443 -p 143\"" > /etc/sysconfig/dropbear
 	echo "/bin/false" >> /etc/shells
 	sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 	sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
-	sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443 -p 143"/g' /etc/default/dropbear
+	sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443 -p 143 -p 109 -p 110"/g' /etc/default/dropbear
 
 	service ssh stop
 	systemctl stop sshd.service
