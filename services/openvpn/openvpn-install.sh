@@ -66,8 +66,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 		info "Looks like OpenVPN is already installed."
 		echo
 		echo "What do you want to do?"
-		echo "   1) Add a new user"
-		echo "   2) Revoke an existing user"
+		echo "   1) Generate new Client"
+		echo "   2) Revoke an existing Client"
 		echo "   3) Remove OpenVPN"
 		echo "   4) Exit"
 		read -p "Select an option [1-4]: " option
@@ -307,8 +307,16 @@ ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 	echo "keepalive 10 120
 cipher AES-256-CBC
 comp-lzo
+
+# Drop Users
 user nobody
-group $GROUPNAME
+group nogroup
+
+# PAM Plugin
+client-cert-not-required
+plugin /usr/lib/openvpn/openvpn-auth-pam.so login
+
+
 persist-key
 persist-tun
 status openvpn-status.log
