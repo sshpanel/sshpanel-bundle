@@ -319,9 +319,6 @@ comp-lzo
 user nobody
 group nogroup
 
-plugin /usr/lib/openvpn/$PAM_PLUGIN login
-
-
 persist-key
 persist-tun
 status openvpn-status.log
@@ -417,7 +414,6 @@ resolv-retry infinite
 nobind
 
 auth-user-pass
-plugin /usr/lib/openvpn/$PAM_PLUGIN login
 
 persist-key
 persist-tun
