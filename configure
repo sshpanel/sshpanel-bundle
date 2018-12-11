@@ -57,6 +57,10 @@ while :
 			space
 			enter
 			;;
+
+			5)
+				echo 'aa';
+			;;
 			6) 
 			danger "Aborting!"
 			exit
