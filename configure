@@ -59,7 +59,10 @@ while :
 			;;
 
 			5)
-				echo 'aa';
+			bash services/webmin/webmin-install.sh
+			
+			bash misc/copyright.sh
+			space
 			;;
 			6) 
 			danger "Aborting!"
