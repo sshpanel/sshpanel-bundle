@@ -316,15 +316,6 @@ ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 cipher AES-256-CBC
 comp-lzo
 
-# login handler
-script-security 3 system
-auth-user-pass-verify /etc/openvpn/agent/auth.sh via-env
-username-as-common-name
-
-#up & down handler
-client-connect "/etc/openvpn/agent/up.sh"
-client-disconnect "/etc/openvpn/agent/down.sh"
-
 persist-key
 persist-tun
 status openvpn-status.log
