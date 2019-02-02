@@ -277,6 +277,12 @@ auth SHA512
 tls-auth ta.key 0
 topology subnet
 duplicate-cn
+
+# authenticating user
+user nobody
+group nogroup
+plugin /usr/lib/openvpn/$PAM_PLUGIN login
+
 server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 	echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
