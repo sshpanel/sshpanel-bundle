@@ -276,7 +276,6 @@ dh dh.pem
 auth SHA512
 tls-auth ta.key 0
 topology subnet
-duplicate-cn
 
 # authenticating user
 user nobody
